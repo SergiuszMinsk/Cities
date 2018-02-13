@@ -24688,6 +24688,7 @@ var Cities = function () {
 
         //Firebase config
         if (!firebase.apps.length) {
+
             var config = {
                 apiKey: "AIzaSyDdDGhVyntUqImmJHpnLpk6crSW935lUqc",
                 authDomain: "test-project-904fc.firebaseapp.com",
@@ -24715,7 +24716,8 @@ var Cities = function () {
         this.errorMesages = {
             emptyValue: 'Значение не может быть пустым',
             lastCharMatch: 'Слово не на последнюю букву компьютера!',
-            compDoesntKnowWord: 'Компьютер не может придумать слов на Вашу последнюю букву! Вы победили!'
+            compDoesntKnowWord: 'Компьютер не может придумать слов на Вашу последнюю букву! Вы победили!',
+            compRepeatWord: 'У компьютера больше не осталось вариантов, он повторяется!'
         };
         this.error = (0, _jquery2.default)('.js-error');
         this.userResult = (0, _jquery2.default)('.js-user-result');
@@ -24757,22 +24759,76 @@ var Cities = function () {
                 _this.currentCityUser.city = value;
                 value = value.substring(0, 1).toUpperCase() + value.slice(1);
 
-                _this.ymapsUser.ready(init);
+                var _iteratorNormalCompletion = true;
+                var _didIteratorError = false;
+                var _iteratorError = undefined;
 
-                function init() {
-                    // Поиск координат центра город
-                    ymaps.geocode(value, { results: 1 }).then(function (res) {
-                        // Выбираем первый результат геокодирования.
-                        var firstGeoObject = res.geoObjects.get(0),
+                try {
+                    for (var _iterator = _this.compCities[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+                        var i = _step.value;
+                        var _iteratorNormalCompletion2 = true;
+                        var _didIteratorError2 = false;
+                        var _iteratorError2 = undefined;
 
-                        // Создаем карту с нужным центром.
-                        myMap = new ymaps.Map("map", {
-                            center: firstGeoObject.geometry.getCoordinates(),
-                            zoom: 11
+                        try {
+                            for (var _iterator2 = _this.userCities[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
+                                var j = _step2.value;
+
+                                if (value === i || i === j) {
+                                    _this.error.text(_this.errorMesages.compRepeatWord);
+                                    setTimeout(function () {
+                                        _this.modal.openModal();
+                                    }, 2000);
+                                }
+                            }
+                        } catch (err) {
+                            _didIteratorError2 = true;
+                            _iteratorError2 = err;
+                        } finally {
+                            try {
+                                if (!_iteratorNormalCompletion2 && _iterator2.return) {
+                                    _iterator2.return();
+                                }
+                            } finally {
+                                if (_didIteratorError2) {
+                                    throw _iteratorError2;
+                                }
+                            }
+                        }
+                    }
+                } catch (err) {
+                    _didIteratorError = true;
+                    _iteratorError = err;
+                } finally {
+                    try {
+                        if (!_iteratorNormalCompletion && _iterator.return) {
+                            _iterator.return();
+                        }
+                    } finally {
+                        if (_didIteratorError) {
+                            throw _iteratorError;
+                        }
+                    }
+                }
+
+                initYaMap();
+
+                function initYaMap() {
+                    self.ymapsUser.ready(init);
+                    function init() {
+                        // Поиск координат центра город
+                        ymaps.geocode(value, { results: 1 }).then(function (res) {
+                            // Выбираем первый результат геокодирования.
+                            var firstGeoObject = res.geoObjects.get(0),
+
+                            // Создаем карту с нужным центром.
+                            myMap = new ymaps.Map("map", {
+                                center: firstGeoObject.geometry.getCoordinates(),
+                                zoom: 11
+                            });
+                            myMap.container.fitToViewport();
                         });
-                        console.log(myMap);
-                        myMap.container.fitToViewport();
-                    });
+                    }
                 }
 
                 var liElem = (0, _jquery2.default)('<li></li>');
@@ -24780,7 +24836,6 @@ var Cities = function () {
                 _this.userResult.append(liElem);
                 if (value === '') {
                     _this.userResult.html('');
-                    // this.modal.openModalFailEmpty();
                     _this.error.text(_this.errorMesages.emptyValue);
                 } else {
                     _this.userCities.push(value);
@@ -24861,12 +24916,6 @@ var Cities = function () {
                 }
             });
         }
-
-        // getCityGeoCode() {
-        //
-        //
-        // }
-
     }, {
         key: 'getLastChar',
         value: function getLastChar(str) {
@@ -24891,13 +24940,13 @@ var Cities = function () {
 
             var getLastCharUser = this.getLastChar(this.currentCityUser.city);
 
-            var _iteratorNormalCompletion = true;
-            var _didIteratorError = false;
-            var _iteratorError = undefined;
+            var _iteratorNormalCompletion3 = true;
+            var _didIteratorError3 = false;
+            var _iteratorError3 = undefined;
 
             try {
-                for (var _iterator = this.citiesInfo[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-                    var i = _step.value;
+                for (var _iterator3 = this.citiesInfo[Symbol.iterator](), _step3; !(_iteratorNormalCompletion3 = (_step3 = _iterator3.next()).done); _iteratorNormalCompletion3 = true) {
+                    var i = _step3.value;
 
                     i = i.toLowerCase();
                     if (i.substring(0, 1) === getLastCharUser) {
@@ -24905,22 +24954,21 @@ var Cities = function () {
                     }
                 }
             } catch (err) {
-                _didIteratorError = true;
-                _iteratorError = err;
+                _didIteratorError3 = true;
+                _iteratorError3 = err;
             } finally {
                 try {
-                    if (!_iteratorNormalCompletion && _iterator.return) {
-                        _iterator.return();
+                    if (!_iteratorNormalCompletion3 && _iterator3.return) {
+                        _iterator3.return();
                     }
                 } finally {
-                    if (_didIteratorError) {
-                        throw _iteratorError;
+                    if (_didIteratorError3) {
+                        throw _iteratorError3;
                     }
                 }
             }
 
             if (arrTheSameChar.length === 0) {
-                // this.modal.openModalFailCompByWord();
                 this.error.text(this.errorMesages.compDoesntKnowWord);
                 setTimeout(function () {
                     self.modal.openModal();
@@ -24929,7 +24977,6 @@ var Cities = function () {
 
             this.innerText.fadeOut(function () {
                 if (arrTheSameChar.length === 0) {
-                    // self.modal.openModalFailCompByWord();
                     self.error.text(self.errorMesages.compDoesntKnowWord);
                     setTimeout(function () {
                         self.modal.openModal();
@@ -24957,21 +25004,21 @@ var Cities = function () {
 
                     self.ymapsComp.ready(init);
 
-                    var _iteratorNormalCompletion2 = true;
-                    var _didIteratorError2 = false;
-                    var _iteratorError2 = undefined;
+                    var _iteratorNormalCompletion4 = true;
+                    var _didIteratorError4 = false;
+                    var _iteratorError4 = undefined;
 
                     try {
 
-                        for (var _iterator2 = self.compCities[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
-                            var i = _step2.value;
-                            var _iteratorNormalCompletion3 = true;
-                            var _didIteratorError3 = false;
-                            var _iteratorError3 = undefined;
+                        for (var _iterator4 = self.compCities[Symbol.iterator](), _step4; !(_iteratorNormalCompletion4 = (_step4 = _iterator4.next()).done); _iteratorNormalCompletion4 = true) {
+                            var i = _step4.value;
+                            var _iteratorNormalCompletion5 = true;
+                            var _didIteratorError5 = false;
+                            var _iteratorError5 = undefined;
 
                             try {
-                                for (var _iterator3 = self.userCities[Symbol.iterator](), _step3; !(_iteratorNormalCompletion3 = (_step3 = _iterator3.next()).done); _iteratorNormalCompletion3 = true) {
-                                    var j = _step3.value;
+                                for (var _iterator5 = self.userCities[Symbol.iterator](), _step5; !(_iteratorNormalCompletion5 = (_step5 = _iterator5.next()).done); _iteratorNormalCompletion5 = true) {
+                                    var j = _step5.value;
 
                                     if (value === i || i === j) {
                                         self.error.text('У компьютера больше не осталось вариантов, он повторяется!');
@@ -24981,31 +25028,31 @@ var Cities = function () {
                                     }
                                 }
                             } catch (err) {
-                                _didIteratorError3 = true;
-                                _iteratorError3 = err;
+                                _didIteratorError5 = true;
+                                _iteratorError5 = err;
                             } finally {
                                 try {
-                                    if (!_iteratorNormalCompletion3 && _iterator3.return) {
-                                        _iterator3.return();
+                                    if (!_iteratorNormalCompletion5 && _iterator5.return) {
+                                        _iterator5.return();
                                     }
                                 } finally {
-                                    if (_didIteratorError3) {
-                                        throw _iteratorError3;
+                                    if (_didIteratorError5) {
+                                        throw _iteratorError5;
                                     }
                                 }
                             }
                         }
                     } catch (err) {
-                        _didIteratorError2 = true;
-                        _iteratorError2 = err;
+                        _didIteratorError4 = true;
+                        _iteratorError4 = err;
                     } finally {
                         try {
-                            if (!_iteratorNormalCompletion2 && _iterator2.return) {
-                                _iterator2.return();
+                            if (!_iteratorNormalCompletion4 && _iterator4.return) {
+                                _iterator4.return();
                             }
                         } finally {
-                            if (_didIteratorError2) {
-                                throw _iteratorError2;
+                            if (_didIteratorError4) {
+                                throw _iteratorError4;
                             }
                         }
                     }

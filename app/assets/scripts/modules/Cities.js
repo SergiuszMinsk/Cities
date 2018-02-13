@@ -8,6 +8,7 @@ export default class Cities {
 
         //Firebase config
         if (!firebase.apps.length) {
+
             const config = {
                 apiKey: "AIzaSyDdDGhVyntUqImmJHpnLpk6crSW935lUqc",
                 authDomain: "test-project-904fc.firebaseapp.com",
@@ -35,7 +36,8 @@ export default class Cities {
         this.errorMesages = {
             emptyValue: 'Значение не может быть пустым',
             lastCharMatch: 'Слово не на последнюю букву компьютера!',
-            compDoesntKnowWord: 'Компьютер не может придумать слов на Вашу последнюю букву! Вы победили!'
+            compDoesntKnowWord: 'Компьютер не может придумать слов на Вашу последнюю букву! Вы победили!',
+            compRepeatWord: 'У компьютера больше не осталось вариантов, он повторяется!'
         }
         this.error = $('.js-error');
         this.userResult = $('.js-user-result');
@@ -69,29 +71,41 @@ export default class Cities {
             this.currentCityUser.city = value;
             value = value.substring(0, 1).toUpperCase() + value.slice(1);
 
-                    this.ymapsUser.ready(init);
-
-                    function init() {
-                        // Поиск координат центра город
-                        ymaps.geocode(value, {results: 1}).then(function (res) {
-                            // Выбираем первый результат геокодирования.
-                            var firstGeoObject = res.geoObjects.get(0),
-                                // Создаем карту с нужным центром.
-                                myMap = new ymaps.Map("map", {
-                                    center: firstGeoObject.geometry.getCoordinates(),
-                                    zoom: 11
-                                });
-                            console.log(myMap);
-                            myMap.container.fitToViewport();
-                        });
+            for (let i of this.compCities) {
+                for (let j of this.userCities) {
+                    if (value === i || i === j) {
+                        this.error.text(this.errorMesages.compRepeatWord);
+                        setTimeout(() => {
+                            this.modal.openModal();
+                        }, 2000)
                     }
+                }
+            }
+                    initYaMap();
+
+                    function initYaMap() {
+                        self.ymapsUser.ready(init);
+                        function init() {
+                            // Поиск координат центра город
+                            ymaps.geocode(value, {results: 1}).then(function (res) {
+                                // Выбираем первый результат геокодирования.
+                                var firstGeoObject = res.geoObjects.get(0),
+                                    // Создаем карту с нужным центром.
+                                    myMap = new ymaps.Map("map", {
+                                        center: firstGeoObject.geometry.getCoordinates(),
+                                        zoom: 11
+                                    });
+                                myMap.container.fitToViewport();
+                            });
+                        }
+                    }
+
 
             const liElem = $('<li></li>');
             liElem.text(value);
             this.userResult.append(liElem);
             if (value === '') {
                 this.userResult.html('');
-                // this.modal.openModalFailEmpty();
                 this.error.text(this.errorMesages.emptyValue);
             } else {
                 this.userCities.push(value);
@@ -171,10 +185,6 @@ export default class Cities {
             });
     }
 
-    // getCityGeoCode() {
-    //
-    //
-    // }
 
     getLastChar(str) {
         return str.slice(-1);
@@ -203,7 +213,6 @@ export default class Cities {
             }
 
       if (arrTheSameChar.length === 0) {
-            // this.modal.openModalFailCompByWord();
             this.error.text(this.errorMesages.compDoesntKnowWord);
           setTimeout(() => {
               self.modal.openModal();
@@ -212,7 +221,6 @@ export default class Cities {
 
         this.innerText.fadeOut(function() {
             if (arrTheSameChar.length === 0) {
-                // self.modal.openModalFailCompByWord();
                 self.error.text(self.errorMesages.compDoesntKnowWord);
                 setTimeout(() => {
                     self.modal.openModal();

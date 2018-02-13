@@ -1,6 +1,7 @@
 .form {
   position: absolute;
   margin-top: -5rem;
+  z-index: 10;
 
   &__city {
     width: 200px;
