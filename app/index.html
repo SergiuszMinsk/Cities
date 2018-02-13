@@ -4,8 +4,19 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- build:css assets/styles/styles.css -->
     <link rel="stylesheet" href="temp/styles/styles.css">
-    <title>Document</title>
+    <!-- endbuild -->
+    <script src="//api-maps.yandex.ru/2.0/?load=package.standard&lang=ru-RU" type="text/javascript"></script>
+    <style type="text/css">
+      html, body, #map {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+    <title>Cities game</title>
 </head>
 <body>
 <div class="container">
@@ -15,12 +26,21 @@
     </h2>
 </div>
     <form action="#" class="form js-form" method="get">
-        <input type="text" class="form__city js-form-city" name="city" class="js-input-text" placeholder="Введите город"/>
+        <input type="text" class="form__city js-form-city" name="city" class="js-input-text" placeholder="Введите город" />
         <input type="submit" class="form__button" value="Готово"/>
+        <span class="error js-error"></span>
+    </form>
+    <form action="#" class="form js-form-firstChoice" method="get">
+        <input type="text" class="form__city js-form-city-first-choice" name="city" class="js-input-text" placeholder="Введите город" />
+        <input type="submit" class="form__button" value="Готово"/>
+       <span class="error js-error"></span>
     </form>
 <div class="innerText">
     <h2 class="innerText__title js-inner-text"></h2>
 </div>
+  <div class="map-container">
+    <div id="map"></div>
+  </div>
 </div>
 <div class="user-result"><h2 class="user-result__title">
     Ваши города:
@@ -28,6 +48,24 @@
 <div class="comp-result"><h2 class="comp-result__title">
     Города компьютера:
 </h2><ul class="js-comp-result"></ul></div>
+
+<div class="overlay"></div>
+<div class="modal">
+<div class="modal__content js-modal-content">
+        <h1 class="modal__content-title js-content-title">Игра закончена</h1>
+        <p class="modal__content-desc js-content-desc">По ходу игры у нас имеются следующие результаты:</p>
+        <p class="modal__user">Ваше кол-во городов:
+            <span class="modal__result-user js-result-user"></span>
+        </p>
+        <p class="modal__comp">Кол-во городов компа:
+            <span class="modal__result-comp js-result-comp"></span>
+        </p>
+        <p class="modal__final-words">Нажмите ESC, чтобы начать заново</p>
+    <a href="#" class="modal__close-btn js-close-btn" title="Close the modal window"></a>
+</div>
+</div>
+<!-- build:js assets/scripts/App.js -->
 <script src="/temp/scripts/App.js"></script>
+<!-- endbuild -->
 </body>
 </html>

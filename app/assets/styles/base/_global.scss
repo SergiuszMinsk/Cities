@@ -1,0 +1,71 @@
+body {
+  position: relative;
+}
+
+.overlay {
+  background: rgba(0,0,0,.7);
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 10;
+  height: 100%;
+}
+
+.map-container {
+  width: 550px;
+  height: 400px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.innerText__title {
+  position: absolute;
+  margin-top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.user-result {
+  position: absolute;
+  top: 0;
+  margin-left: 30px;
+}
+
+.comp-result {
+  margin-right: 30px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.error {
+  position: absolute;
+  z-index: 1;
+  display: block;
+  margin-top: 10px;
+  color: red;
+}
+
+.ymaps-map:first-child {
+  margin-top: 500px !important;
+  margin-left: -339px !important;
+}
+
+.ymaps-map:last-child {
+  margin-top: -400px !important;
+  margin-left: 350px !important;
+}

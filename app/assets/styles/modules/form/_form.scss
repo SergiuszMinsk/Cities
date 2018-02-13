@@ -1,0 +1,14 @@
+.form {
+  position: absolute;
+  margin-top: 30px;
+
+  &__city {
+    width: 200px;
+  }
+
+  &__button {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
