@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 82);
+/******/ 	return __webpack_require__(__webpack_require__.s = 81);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -85,10 +85,10 @@
  * limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-var assert_1 = __webpack_require__(44);
+var assert_1 = __webpack_require__(43);
 exports.assert = assert_1.assert;
 exports.assertionError = assert_1.assertionError;
-var crypt_1 = __webpack_require__(45);
+var crypt_1 = __webpack_require__(44);
 exports.base64 = crypt_1.base64;
 exports.base64Decode = crypt_1.base64Decode;
 exports.base64Encode = crypt_1.base64Encode;
@@ -109,7 +109,7 @@ var errors_1 = __webpack_require__(96);
 exports.ErrorFactory = errors_1.ErrorFactory;
 exports.FirebaseError = errors_1.FirebaseError;
 exports.patchCapture = errors_1.patchCapture;
-var json_1 = __webpack_require__(46);
+var json_1 = __webpack_require__(45);
 exports.jsonEval = json_1.jsonEval;
 exports.stringify = json_1.stringify;
 var jwt_1 = __webpack_require__(97);
@@ -118,7 +118,7 @@ exports.isAdmin = jwt_1.isAdmin;
 exports.issuedAtTime = jwt_1.issuedAtTime;
 exports.isValidFormat = jwt_1.isValidFormat;
 exports.isValidTimestamp = jwt_1.isValidTimestamp;
-var obj_1 = __webpack_require__(47);
+var obj_1 = __webpack_require__(46);
 exports.clone = obj_1.clone;
 exports.contains = obj_1.contains;
 exports.every = obj_1.every;
@@ -1278,12 +1278,12 @@ var util_1 = __webpack_require__(0);
 var util_2 = __webpack_require__(1);
 var SortedMap_1 = __webpack_require__(23);
 var Node_1 = __webpack_require__(5);
-var snap_1 = __webpack_require__(53);
+var snap_1 = __webpack_require__(52);
 var PriorityIndex_1 = __webpack_require__(3);
 var KeyIndex_1 = __webpack_require__(14);
-var IndexMap_1 = __webpack_require__(55);
+var IndexMap_1 = __webpack_require__(54);
 var LeafNode_1 = __webpack_require__(22);
-var comparators_1 = __webpack_require__(57);
+var comparators_1 = __webpack_require__(56);
 // TODO: For memory savings, don't store priorityNode_ if it's empty.
 var EMPTY_NODE;
 /**
@@ -2951,9 +2951,9 @@ var LeafNode_1 = __webpack_require__(22);
 var Node_1 = __webpack_require__(5);
 var util_1 = __webpack_require__(0);
 var util_2 = __webpack_require__(0);
-var childSet_1 = __webpack_require__(56);
-var comparators_1 = __webpack_require__(57);
-var IndexMap_1 = __webpack_require__(55);
+var childSet_1 = __webpack_require__(55);
+var comparators_1 = __webpack_require__(56);
+var IndexMap_1 = __webpack_require__(54);
 var PriorityIndex_1 = __webpack_require__(3);
 var USE_HINZE = true;
 /**
@@ -3528,7 +3528,7 @@ exports.Index = Index;
 Object.defineProperty(exports, "__esModule", { value: true });
 var util_1 = __webpack_require__(0);
 var util_2 = __webpack_require__(1);
-var snap_1 = __webpack_require__(53);
+var snap_1 = __webpack_require__(52);
 var __childrenNodeConstructor;
 /**
  * LeafNode is a class for storing leaf nodes in a DataSnapshot.  It
@@ -4465,10 +4465,10 @@ exports.SortedMap = SortedMap;
  * limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-var ServerValues_1 = __webpack_require__(59);
+var ServerValues_1 = __webpack_require__(58);
 var nodeFromJSON_1 = __webpack_require__(15);
 var Path_1 = __webpack_require__(2);
-var SparseSnapshotTree_1 = __webpack_require__(60);
+var SparseSnapshotTree_1 = __webpack_require__(59);
 var SyncTree_1 = __webpack_require__(114);
 var SnapshotHolder_1 = __webpack_require__(125);
 var util_1 = __webpack_require__(0);
@@ -4477,11 +4477,11 @@ var util_3 = __webpack_require__(0);
 var AuthTokenProvider_1 = __webpack_require__(126);
 var StatsManager_1 = __webpack_require__(34);
 var StatsReporter_1 = __webpack_require__(128);
-var StatsListener_1 = __webpack_require__(65);
+var StatsListener_1 = __webpack_require__(64);
 var EventQueue_1 = __webpack_require__(129);
-var PersistentConnection_1 = __webpack_require__(66);
+var PersistentConnection_1 = __webpack_require__(65);
 var ReadonlyRestClient_1 = __webpack_require__(134);
-var Database_1 = __webpack_require__(48);
+var Database_1 = __webpack_require__(47);
 var INTERRUPT_REASON = 'repo_interrupt';
 /**
  * A connection to a single data repository.
@@ -5448,18 +5448,18 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-var onDisconnect_1 = __webpack_require__(51);
+var onDisconnect_1 = __webpack_require__(50);
 var TransactionResult_1 = __webpack_require__(110);
 var util_1 = __webpack_require__(1);
 var NextPushId_1 = __webpack_require__(111);
-var Query_1 = __webpack_require__(52);
+var Query_1 = __webpack_require__(51);
 var Repo_1 = __webpack_require__(24);
 var Path_1 = __webpack_require__(2);
 var QueryParams_1 = __webpack_require__(135);
 var validation_1 = __webpack_require__(9);
 var util_2 = __webpack_require__(0);
 var util_3 = __webpack_require__(0);
-var SyncPoint_1 = __webpack_require__(63);
+var SyncPoint_1 = __webpack_require__(62);
 var Reference = /** @class */ (function (_super) {
     __extends(Reference, _super);
     /**
@@ -6489,7 +6489,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var util_1 = __webpack_require__(0);
 var Repo_1 = __webpack_require__(24);
 var util_2 = __webpack_require__(1);
-var parser_1 = __webpack_require__(49);
+var parser_1 = __webpack_require__(48);
 var validation_1 = __webpack_require__(9);
 __webpack_require__(137);
 /** @const {string} */
@@ -6774,7 +6774,7 @@ function nullFunctionSpec(opt_optional) {
 /* harmony export (immutable) */ __webpack_exports__["c"] = metadataValidator;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__json__ = __webpack_require__(152);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__location__ = __webpack_require__(28);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__path__ = __webpack_require__(79);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__path__ = __webpack_require__(78);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__type__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__url__ = __webpack_require__(38);
 /**
@@ -7078,10 +7078,6 @@ var _jquery = __webpack_require__(41);
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
-var _Cities = __webpack_require__(42);
-
-var _Cities2 = _interopRequireDefault(_Cities);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -7132,52 +7128,6 @@ var Modal = function () {
             this.resultUser.text(this.modalResultArrUser.length);
             this.resultComp.text(this.modalResultArrComp.length);
         }
-
-        // openModalFailComp() {
-        //     this.modalContent.css('transform', 'translateY(0)');
-        //     this.overlay.css('visibility', 'visible');
-        //     this.closeBtn.css('display', 'block');
-        //     this.modal.css('display',  'none');
-        //     this.container.css('z-index', '0');
-        //     this.title.css('color', 'green');
-        //     this.title.text('Поздравляем!');
-        //     this.desc.text('У компьютера больше не осталось вариантов, он повторяется');
-        // }
-
-        // openModalFailCompByWord() {
-        //     this.modalContent.css('transform', 'translateY(0)');
-        //     this.overlay.css('visibility', 'visible');
-        //     this.closeBtn.css('display', 'block');
-        //     this.modal.css('display',  'none');
-        //     this.container.css('z-index', '0');
-        //     this.title.css('color', 'green');
-        //     this.title.text('Поздравляем!');
-        //     this.desc.text('Компьютер не может придумать слов на Вашу последнюю букву! Вы победили!');
-        // }
-
-        // openModalFailEmpty() {
-        //     this.modalContent.css('transform', 'translateY(0)');
-        //     this.overlay.css('visibility', 'visible');
-        //     this.closeBtn.css('display', 'block');
-        //     this.modal.css('display',  'none');
-        //     this.container.css('z-index', '0');
-        //     this.title.css('color', 'red');
-        //     this.title.text('Внимание!');
-        //     this.desc.text('Значение не может быть пустым');
-        // }
-
-        // openModalFailRepeat() {
-        //     this.modalContent.css('transform', 'translateY(0)');
-        //     this.overlay.css('visibility', 'visible');
-        //     this.closeBtn.css('display', 'block');
-        //     this.modal.css('display',  'none');
-        //     this.container.css('z-index', '0');
-        //     this.title.css('color', 'red');
-        //     this.title.text('Внимание!');
-        //     this.desc.text('Вы повторяетесь');
-        // }
-
-
     }, {
         key: 'closeModal',
         value: function closeModal() {
@@ -17567,386 +17517,6 @@ return jQuery;
 
 /***/ }),
 /* 42 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _jquery = __webpack_require__(41);
-
-var _jquery2 = _interopRequireDefault(_jquery);
-
-var _firebase = __webpack_require__(83);
-
-var firebase = _interopRequireWildcard(_firebase);
-
-var _Modal = __webpack_require__(40);
-
-var _Modal2 = _interopRequireDefault(_Modal);
-
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-var Cities = function () {
-    function Cities() {
-        _classCallCheck(this, Cities);
-
-        //Firebase config
-        if (!firebase.apps.length) {
-            var config = {
-                apiKey: "AIzaSyDdDGhVyntUqImmJHpnLpk6crSW935lUqc",
-                authDomain: "test-project-904fc.firebaseapp.com",
-                databaseURL: "https://test-project-904fc.firebaseio.com/",
-                projectId: "test-project-904fc",
-                storageBucket: "",
-                messagingSenderId: "1082433347999"
-            };
-
-            firebase.initializeApp(config);
-        }
-
-        this.modal = new _Modal2.default();
-        this.window = (0, _jquery2.default)(window);
-        this.ajaxHandlerScript = 'https://test-project-904fc.firebaseio.com/.json';
-        this.userCities = [];
-        this.compCities = [];
-        this.citiesInfo = [];
-        this.currentCityUser = {};
-        this.currentCityComp = {};
-        this.titleMessages = {
-            comp: 'Ход компьютера',
-            user: 'Ваш ход:'
-        };
-        this.errorMesages = {
-            emptyValue: 'Значение не может быть пустым',
-            lastCharMatch: 'Слово не на последнюю букву компьютера!',
-            compDoesntKnowWord: 'Компьютер не может придумать слов на Вашу последнюю букву! Вы победили!'
-        };
-        this.error = (0, _jquery2.default)('.js-error');
-        this.userResult = (0, _jquery2.default)('.js-user-result');
-        this.compResult = (0, _jquery2.default)('.js-comp-result');
-        this.headerTitle = (0, _jquery2.default)('.js-header-title');
-        this.innerText = (0, _jquery2.default)('.js-inner-text');
-        this.formFirstChoice = (0, _jquery2.default)('.js-form-firstChoice');
-        this.form = (0, _jquery2.default)('.js-form');
-        this.city = (0, _jquery2.default)('.js-form-city');
-        this.cityFirstChoice = (0, _jquery2.default)('.js-form-city-first-choice');
-        this.ymapsUser = _jquery2.default.extend({}, ymaps);
-        this.ymapsComp = _jquery2.default.extend({}, ymaps);
-        this.mapContainer = (0, _jquery2.default)('.map-container');
-        this.map = (0, _jquery2.default)('#map');
-        this.events();
-    }
-
-    _createClass(Cities, [{
-        key: 'events',
-        value: function events() {
-            var _this = this;
-
-            this.window.on('load', function () {
-                _this.loadData();
-                _this.form.hide();
-            });
-
-            this.cityFirstChoice.on('input', function () {
-                return _this.error.text('');
-            });
-            this.city.on('input', function () {
-                return _this.error.text('');
-            });
-
-            this.formFirstChoice.on('submit', function (e) {
-                e.preventDefault();
-                var self = _this;
-                var value = _this.cityFirstChoice.val().toLowerCase();
-                _this.currentCityUser.city = value;
-                value = value.substring(0, 1).toUpperCase() + value.slice(1);
-
-                _this.ymapsUser.ready(init);
-
-                function init() {
-                    // Поиск координат центра город
-                    ymaps.geocode(value, { results: 1 }).then(function (res) {
-                        // Выбираем первый результат геокодирования.
-                        var firstGeoObject = res.geoObjects.get(0),
-
-                        // Создаем карту с нужным центром.
-                        myMap = new ymaps.Map("map", {
-                            center: firstGeoObject.geometry.getCoordinates(),
-                            zoom: 11
-                        });
-                        console.log(myMap);
-                        myMap.container.fitToViewport();
-                    });
-                }
-
-                var liElem = (0, _jquery2.default)('<li></li>');
-                liElem.text(value);
-                _this.userResult.append(liElem);
-                if (value === '') {
-                    _this.userResult.html('');
-                    // this.modal.openModalFailEmpty();
-                    _this.error.text(_this.errorMesages.emptyValue);
-                } else {
-                    _this.userCities.push(value);
-                    _this.modal.modalResultArrUser = _this.userCities;
-                    _this.headerTitle.text(_this.titleMessages.comp);
-                    _this.formFirstChoice.hide();
-                    _this.checkCity();
-                }
-            });
-
-            this.form.on('submit', function (e) {
-                e.preventDefault();
-                var value = _this.city.val().toLowerCase();
-                _this.currentCityUser.city = value;
-
-                // let checkRepeatWord = false;
-                // for (let i of this.userCities) {
-                //     if ( i === this.currentCityUser.city ) {
-                //         checkRepeatWord = true;
-                //     }
-                // }
-                //
-                // if (checkRepeatWord) {
-                //     this.error.text('Вы повторили слово, придумайте что-нибудь другое');
-                // }
-
-                if (_this.currentCityUser.city.substring(0, 1) === _this.currentCityComp.lastChar) {
-                    var init = function init() {
-                        // Поиск координат центра город
-                        ymaps.geocode(value, { results: 1 }).then(function (res) {
-                            // Выбираем первый результат геокодирования.
-                            var firstGeoObject = res.geoObjects.get(0),
-
-                            // Создаем карту с нужным центром.
-                            myMap = new ymaps.Map("map", {
-                                center: firstGeoObject.geometry.getCoordinates(),
-                                zoom: 11
-                            });
-                            myMap.container.fitToViewport();
-                        });
-                    };
-
-                    _this.userCities.push(value);
-                    value = value.substring(0, 1).toUpperCase() + value.slice(1);
-
-                    _this.ymapsUser.ready(init);
-
-                    var liElem = (0, _jquery2.default)('<li></li>');
-                    liElem.text(value);
-                    _this.userResult.append(liElem);
-                    _this.city.val('');
-                    _this.form.fadeOut();
-                    _this.headerTitle.text(_this.titleMessages.comp);
-                    _this.checkCity();
-                } else {
-                    _this.error.text(_this.errorMesages.lastCharMatch);
-                }
-            });
-        }
-    }, {
-        key: 'loadData',
-        value: function loadData() {
-            var _this2 = this;
-
-            return fetch(this.ajaxHandlerScript, {
-                method: 'get'
-            }).then(function (response) {
-                var contentType = response.headers.get("content-type");
-                if (contentType && contentType.includes("application/json")) {
-                    return response.json();
-                }
-                throw new TypeError("получен не JSON!");
-            }).then(function (data) {
-                for (var key in data) {
-                    if (data.hasOwnProperty(key)) {
-                        _this2.citiesInfo.push(data[key]);
-                    }
-                }
-            });
-        }
-
-        // getCityGeoCode() {
-        //
-        //
-        // }
-
-    }, {
-        key: 'getLastChar',
-        value: function getLastChar(str) {
-            return str.slice(-1);
-        }
-    }, {
-        key: 'randomWord',
-        value: function randomWord(arr) {
-            return arr[Math.floor(Math.random() * arr.length)];
-        }
-
-        // makeFirstCharUpper(str) {
-        //     return str.substring(0, 1).toUpperCase() + str.slice(1);
-        // }
-
-    }, {
-        key: 'checkCity',
-        value: function checkCity() {
-
-            var self = this;
-            var arrTheSameChar = [];
-
-            var getLastCharUser = this.getLastChar(this.currentCityUser.city);
-
-            var _iteratorNormalCompletion = true;
-            var _didIteratorError = false;
-            var _iteratorError = undefined;
-
-            try {
-                for (var _iterator = this.citiesInfo[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-                    var i = _step.value;
-
-                    i = i.toLowerCase();
-                    if (i.substring(0, 1) === getLastCharUser) {
-                        arrTheSameChar.push(i);
-                    }
-                }
-            } catch (err) {
-                _didIteratorError = true;
-                _iteratorError = err;
-            } finally {
-                try {
-                    if (!_iteratorNormalCompletion && _iterator.return) {
-                        _iterator.return();
-                    }
-                } finally {
-                    if (_didIteratorError) {
-                        throw _iteratorError;
-                    }
-                }
-            }
-
-            if (arrTheSameChar.length === 0) {
-                // this.modal.openModalFailCompByWord();
-                this.error.text(this.errorMesages.compDoesntKnowWord);
-                setTimeout(function () {
-                    self.modal.openModal();
-                }, 1500);
-            }
-
-            this.innerText.fadeOut(function () {
-                if (arrTheSameChar.length === 0) {
-                    // self.modal.openModalFailCompByWord();
-                    self.error.text(self.errorMesages.compDoesntKnowWord);
-                    setTimeout(function () {
-                        self.modal.openModal();
-                    }, 1500);
-                } else {
-                    var init = function init() {
-                        // Поиск координат центра города
-                        ymaps.geocode(value, { results: 1 }).then(function (res) {
-                            // Выбираем первый результат геокодирования.
-                            var firstGeoObject = res.geoObjects.get(0),
-
-                            // Создаем карту с нужным центром.
-                            myMap = new ymaps.Map("map", {
-                                center: firstGeoObject.geometry.getCoordinates(),
-                                zoom: 11
-                            });
-                            myMap.container.fitToViewport();
-                        });
-                    };
-
-                    var value = self.randomWord(arrTheSameChar).toLowerCase();
-                    self.compCities.push(value);
-                    self.modal.modalResultArrComp = self.compCities;
-                    value = value.substring(0, 1).toUpperCase() + value.slice(1);
-
-                    self.ymapsComp.ready(init);
-
-                    var _iteratorNormalCompletion2 = true;
-                    var _didIteratorError2 = false;
-                    var _iteratorError2 = undefined;
-
-                    try {
-
-                        for (var _iterator2 = self.compCities[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
-                            var i = _step2.value;
-                            var _iteratorNormalCompletion3 = true;
-                            var _didIteratorError3 = false;
-                            var _iteratorError3 = undefined;
-
-                            try {
-                                for (var _iterator3 = self.userCities[Symbol.iterator](), _step3; !(_iteratorNormalCompletion3 = (_step3 = _iterator3.next()).done); _iteratorNormalCompletion3 = true) {
-                                    var j = _step3.value;
-
-                                    if (value === i || i === j) {
-                                        self.error.text('У компьютера больше не осталось вариантов, он повторяется!');
-                                        setTimeout(function () {
-                                            self.modal.openModal();
-                                        }, 2000);
-                                    }
-                                }
-                            } catch (err) {
-                                _didIteratorError3 = true;
-                                _iteratorError3 = err;
-                            } finally {
-                                try {
-                                    if (!_iteratorNormalCompletion3 && _iterator3.return) {
-                                        _iterator3.return();
-                                    }
-                                } finally {
-                                    if (_didIteratorError3) {
-                                        throw _iteratorError3;
-                                    }
-                                }
-                            }
-                        }
-                    } catch (err) {
-                        _didIteratorError2 = true;
-                        _iteratorError2 = err;
-                    } finally {
-                        try {
-                            if (!_iteratorNormalCompletion2 && _iterator2.return) {
-                                _iterator2.return();
-                            }
-                        } finally {
-                            if (_didIteratorError2) {
-                                throw _iteratorError2;
-                            }
-                        }
-                    }
-
-                    (0, _jquery2.default)(this).text(value).fadeIn();
-                    (0, _jquery2.default)(this).text(value).fadeOut(2000, function () {
-                        self.headerTitle.text(self.titleMessages.user);
-                        self.form.fadeIn();
-                    });
-
-                    self.currentCityComp.lastChar = self.getLastChar(value);
-                    console.log(self.compCities);
-                    var liElem = (0, _jquery2.default)('<li></li>');
-                    liElem.text(value);
-                    self.compResult.append(liElem);
-                }
-            });
-        }
-    }]);
-
-    return Cities;
-}();
-
-exports.default = Cities;
-
-/***/ }),
-/* 43 */
 /***/ (function(module, exports) {
 
 // shim for using process in browser
@@ -18136,7 +17706,7 @@ process.umask = function() { return 0; };
 
 
 /***/ }),
-/* 44 */
+/* 43 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18184,7 +17754,7 @@ exports.assertionError = function (message) {
 
 
 /***/ }),
-/* 45 */
+/* 44 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18502,7 +18072,7 @@ exports.base64Decode = function (str) {
 
 
 /***/ }),
-/* 46 */
+/* 45 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18547,7 +18117,7 @@ exports.stringify = stringify;
 
 
 /***/ }),
-/* 47 */
+/* 46 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18689,7 +18259,7 @@ exports.every = function (obj, fn) {
 
 
 /***/ }),
-/* 48 */
+/* 47 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18711,7 +18281,7 @@ exports.every = function (obj, fn) {
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var util_1 = __webpack_require__(1);
-var parser_1 = __webpack_require__(49);
+var parser_1 = __webpack_require__(48);
 var Path_1 = __webpack_require__(2);
 var Reference_1 = __webpack_require__(30);
 var Repo_1 = __webpack_require__(24);
@@ -18829,7 +18399,7 @@ exports.DatabaseInternals = DatabaseInternals;
 
 
 /***/ }),
-/* 49 */
+/* 48 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18851,7 +18421,7 @@ exports.DatabaseInternals = DatabaseInternals;
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var Path_1 = __webpack_require__(2);
-var RepoInfo_1 = __webpack_require__(50);
+var RepoInfo_1 = __webpack_require__(49);
 var util_1 = __webpack_require__(1);
 /**
  * @param {!string} pathString
@@ -18960,7 +18530,7 @@ exports.parseURL = function (dataURL) {
 
 
 /***/ }),
-/* 50 */
+/* 49 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19078,7 +18648,7 @@ exports.RepoInfo = RepoInfo;
 
 
 /***/ }),
-/* 51 */
+/* 50 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19199,7 +18769,7 @@ exports.OnDisconnect = OnDisconnect;
 
 
 /***/ }),
-/* 52 */
+/* 51 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19223,8 +18793,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var util_1 = __webpack_require__(0);
 var KeyIndex_1 = __webpack_require__(14);
 var PriorityIndex_1 = __webpack_require__(3);
-var ValueIndex_1 = __webpack_require__(54);
-var PathIndex_1 = __webpack_require__(58);
+var ValueIndex_1 = __webpack_require__(53);
+var PathIndex_1 = __webpack_require__(57);
 var util_2 = __webpack_require__(1);
 var Path_1 = __webpack_require__(2);
 var validation_1 = __webpack_require__(9);
@@ -19712,7 +19282,7 @@ exports.Query = Query;
 
 
 /***/ }),
-/* 53 */
+/* 52 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19774,7 +19344,7 @@ exports.validatePriorityNode = function (priorityNode) {
 
 
 /***/ }),
-/* 54 */
+/* 53 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19879,7 +19449,7 @@ exports.VALUE_INDEX = new ValueIndex();
 
 
 /***/ }),
-/* 55 */
+/* 54 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19901,7 +19471,7 @@ exports.VALUE_INDEX = new ValueIndex();
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var util_1 = __webpack_require__(0);
-var childSet_1 = __webpack_require__(56);
+var childSet_1 = __webpack_require__(55);
 var util_2 = __webpack_require__(0);
 var Node_1 = __webpack_require__(5);
 var PriorityIndex_1 = __webpack_require__(3);
@@ -20067,7 +19637,7 @@ exports.IndexMap = IndexMap;
 
 
 /***/ }),
-/* 56 */
+/* 55 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20204,7 +19774,7 @@ exports.buildChildSet = function (childList, cmp, keyFn, mapSortFn) {
 
 
 /***/ }),
-/* 57 */
+/* 56 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20239,7 +19809,7 @@ exports.NAME_COMPARATOR = NAME_COMPARATOR;
 
 
 /***/ }),
-/* 58 */
+/* 57 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20346,7 +19916,7 @@ exports.PathIndex = PathIndex;
 
 
 /***/ }),
-/* 59 */
+/* 58 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20369,7 +19939,7 @@ exports.PathIndex = PathIndex;
 Object.defineProperty(exports, "__esModule", { value: true });
 var util_1 = __webpack_require__(0);
 var Path_1 = __webpack_require__(2);
-var SparseSnapshotTree_1 = __webpack_require__(60);
+var SparseSnapshotTree_1 = __webpack_require__(59);
 var LeafNode_1 = __webpack_require__(22);
 var nodeFromJSON_1 = __webpack_require__(15);
 var PriorityIndex_1 = __webpack_require__(3);
@@ -20456,7 +20026,7 @@ exports.resolveDeferredValueSnapshot = function (node, serverValues) {
 
 
 /***/ }),
-/* 60 */
+/* 59 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20479,7 +20049,7 @@ exports.resolveDeferredValueSnapshot = function (node, serverValues) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var Path_1 = __webpack_require__(2);
 var PriorityIndex_1 = __webpack_require__(3);
-var CountedSet_1 = __webpack_require__(61);
+var CountedSet_1 = __webpack_require__(60);
 /**
  * Helper class to store a sparse set of snapshots.
  *
@@ -20639,7 +20209,7 @@ exports.SparseSnapshotTree = SparseSnapshotTree;
 
 
 /***/ }),
-/* 61 */
+/* 60 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20742,7 +20312,7 @@ exports.CountedSet = CountedSet;
 
 
 /***/ }),
-/* 62 */
+/* 61 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20796,7 +20366,7 @@ exports.Overwrite = Overwrite;
 
 
 /***/ }),
-/* 63 */
+/* 62 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20821,7 +20391,7 @@ var CacheNode_1 = __webpack_require__(25);
 var ChildrenNode_1 = __webpack_require__(4);
 var util_1 = __webpack_require__(0);
 var util_2 = __webpack_require__(0);
-var ViewCache_1 = __webpack_require__(64);
+var ViewCache_1 = __webpack_require__(63);
 var View_1 = __webpack_require__(118);
 var __referenceConstructor;
 /**
@@ -21053,7 +20623,7 @@ exports.SyncPoint = SyncPoint;
 
 
 /***/ }),
-/* 64 */
+/* 63 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21156,7 +20726,7 @@ exports.ViewCache = ViewCache;
 
 
 /***/ }),
-/* 65 */
+/* 64 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21208,7 +20778,7 @@ exports.StatsListener = StatsListener;
 
 
 /***/ }),
-/* 66 */
+/* 65 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21248,10 +20818,10 @@ var Path_1 = __webpack_require__(2);
 var VisibilityMonitor_1 = __webpack_require__(130);
 var OnlineMonitor_1 = __webpack_require__(131);
 var util_5 = __webpack_require__(0);
-var Connection_1 = __webpack_require__(68);
+var Connection_1 = __webpack_require__(67);
 var util_6 = __webpack_require__(0);
 var util_7 = __webpack_require__(0);
-var ServerActions_1 = __webpack_require__(71);
+var ServerActions_1 = __webpack_require__(70);
 var RECONNECT_MIN_DELAY = 1000;
 var RECONNECT_MAX_DELAY_DEFAULT = 60 * 5 * 1000; // 5 minutes in milliseconds (Case: 1858)
 var RECONNECT_MAX_DELAY_FOR_ADMINS = 30 * 1000; // 30 seconds for admin clients (likely to be a backend server)
@@ -22024,7 +21594,7 @@ exports.PersistentConnection = PersistentConnection;
 
 
 /***/ }),
-/* 67 */
+/* 66 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -22110,7 +21680,7 @@ exports.EventEmitter = EventEmitter;
 
 
 /***/ }),
-/* 68 */
+/* 67 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -22610,7 +22180,7 @@ exports.Connection = Connection;
 
 
 /***/ }),
-/* 69 */
+/* 68 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -22632,7 +22202,7 @@ exports.Connection = Connection;
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var util_1 = __webpack_require__(1);
-var CountedSet_1 = __webpack_require__(61);
+var CountedSet_1 = __webpack_require__(60);
 var StatsManager_1 = __webpack_require__(34);
 var PacketReceiver_1 = __webpack_require__(133);
 var Constants_1 = __webpack_require__(20);
@@ -23246,7 +22816,7 @@ exports.FirebaseIFrameScriptHolder = FirebaseIFrameScriptHolder;
 
 
 /***/ }),
-/* 70 */
+/* 69 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -23602,10 +23172,10 @@ exports.WebSocketConnection = WebSocketConnection;
 
 //# sourceMappingURL=WebSocketConnection.js.map
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(43)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(42)))
 
 /***/ }),
-/* 71 */
+/* 70 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -23683,7 +23253,7 @@ exports.ServerActions = ServerActions;
 
 
 /***/ }),
-/* 72 */
+/* 71 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -23833,7 +23403,7 @@ exports.RangedFilter = RangedFilter;
 
 
 /***/ }),
-/* 73 */
+/* 72 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -23841,7 +23411,7 @@ exports.RangedFilter = RangedFilter;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__firebase_util___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__firebase_util__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__models_errors__ = __webpack_require__(26);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__models_token_manager__ = __webpack_require__(144);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__models_notification_permission__ = __webpack_require__(75);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__models_notification_permission__ = __webpack_require__(74);
 /**
  * Copyright 2017 Google Inc.
  *
@@ -24014,7 +23584,7 @@ var ControllerInterface = /** @class */ (function () {
 
 
 /***/ }),
-/* 74 */
+/* 73 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -24115,7 +23685,7 @@ var SUBSCRIPTION_DETAILS = {
 
 
 /***/ }),
-/* 75 */
+/* 74 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -24145,7 +23715,7 @@ var SUBSCRIPTION_DETAILS = {
 
 
 /***/ }),
-/* 76 */
+/* 75 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -24195,7 +23765,7 @@ var createNewMsg = function (msgType, msgData) {
 
 
 /***/ }),
-/* 77 */
+/* 76 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -24229,19 +23799,19 @@ var ErrorCode;
 
 
 /***/ }),
-/* 78 */
+/* 77 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Reference; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__implementation_args__ = __webpack_require__(36);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__implementation_blob__ = __webpack_require__(80);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__implementation_blob__ = __webpack_require__(79);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__implementation_error__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__implementation_location__ = __webpack_require__(28);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__implementation_metadata__ = __webpack_require__(37);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__implementation_object__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__implementation_path__ = __webpack_require__(79);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__implementation_requests__ = __webpack_require__(81);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__implementation_path__ = __webpack_require__(78);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__implementation_requests__ = __webpack_require__(80);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__implementation_string__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__implementation_type__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__task__ = __webpack_require__(155);
@@ -24487,7 +24057,7 @@ var Reference = /** @class */ (function () {
 
 
 /***/ }),
-/* 79 */
+/* 78 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -24560,7 +24130,7 @@ function lastComponent(path) {
 
 
 /***/ }),
-/* 80 */
+/* 79 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -24700,7 +24270,7 @@ var FbsBlob = /** @class */ (function () {
 
 
 /***/ }),
-/* 81 */
+/* 80 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -24721,7 +24291,7 @@ var FbsBlob = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return resumableUploadChunkSize; });
 /* harmony export (immutable) */ __webpack_exports__["b"] = continueResumableUpload;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__array__ = __webpack_require__(39);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__blob__ = __webpack_require__(80);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__blob__ = __webpack_require__(79);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__error__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__metadata__ = __webpack_require__(37);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__object__ = __webpack_require__(13);
@@ -25062,7 +24632,7 @@ function continueResumableUpload(location, authWrapper, url, blob, chunkSize, ma
 
 
 /***/ }),
-/* 82 */
+/* 81 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -25072,7 +24642,7 @@ var _Modal = __webpack_require__(40);
 
 var _Modal2 = _interopRequireDefault(_Modal);
 
-var _Cities = __webpack_require__(42);
+var _Cities = __webpack_require__(82);
 
 var _Cities2 = _interopRequireDefault(_Cities);
 
@@ -25080,6 +24650,386 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var cities = new _Cities2.default();
 var modal = new _Modal2.default();
+
+/***/ }),
+/* 82 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _jquery = __webpack_require__(41);
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+var _firebase = __webpack_require__(83);
+
+var firebase = _interopRequireWildcard(_firebase);
+
+var _Modal = __webpack_require__(40);
+
+var _Modal2 = _interopRequireDefault(_Modal);
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var Cities = function () {
+    function Cities() {
+        _classCallCheck(this, Cities);
+
+        //Firebase config
+        if (!firebase.apps.length) {
+            var config = {
+                apiKey: "AIzaSyDdDGhVyntUqImmJHpnLpk6crSW935lUqc",
+                authDomain: "test-project-904fc.firebaseapp.com",
+                databaseURL: "https://test-project-904fc.firebaseio.com/",
+                projectId: "test-project-904fc",
+                storageBucket: "",
+                messagingSenderId: "1082433347999"
+            };
+
+            firebase.initializeApp(config);
+        }
+
+        this.modal = new _Modal2.default();
+        this.window = (0, _jquery2.default)(window);
+        this.ajaxHandlerScript = 'https://test-project-904fc.firebaseio.com/.json';
+        this.userCities = [];
+        this.compCities = [];
+        this.citiesInfo = [];
+        this.currentCityUser = {};
+        this.currentCityComp = {};
+        this.titleMessages = {
+            comp: 'Ход компьютера',
+            user: 'Ваш ход:'
+        };
+        this.errorMesages = {
+            emptyValue: 'Значение не может быть пустым',
+            lastCharMatch: 'Слово не на последнюю букву компьютера!',
+            compDoesntKnowWord: 'Компьютер не может придумать слов на Вашу последнюю букву! Вы победили!'
+        };
+        this.error = (0, _jquery2.default)('.js-error');
+        this.userResult = (0, _jquery2.default)('.js-user-result');
+        this.compResult = (0, _jquery2.default)('.js-comp-result');
+        this.headerTitle = (0, _jquery2.default)('.js-header-title');
+        this.innerText = (0, _jquery2.default)('.js-inner-text');
+        this.formFirstChoice = (0, _jquery2.default)('.js-form-firstChoice');
+        this.form = (0, _jquery2.default)('.js-form');
+        this.city = (0, _jquery2.default)('.js-form-city');
+        this.cityFirstChoice = (0, _jquery2.default)('.js-form-city-first-choice');
+        this.ymapsUser = _jquery2.default.extend({}, ymaps);
+        this.ymapsComp = _jquery2.default.extend({}, ymaps);
+        this.mapContainer = (0, _jquery2.default)('.map-container');
+        this.map = (0, _jquery2.default)('#map');
+        this.events();
+    }
+
+    _createClass(Cities, [{
+        key: 'events',
+        value: function events() {
+            var _this = this;
+
+            this.window.on('load', function () {
+                _this.loadData();
+                _this.form.hide();
+            });
+
+            this.cityFirstChoice.on('input', function () {
+                return _this.error.text('');
+            });
+            this.city.on('input', function () {
+                return _this.error.text('');
+            });
+
+            this.formFirstChoice.on('submit', function (e) {
+                e.preventDefault();
+                var self = _this;
+                var value = _this.cityFirstChoice.val().toLowerCase();
+                _this.currentCityUser.city = value;
+                value = value.substring(0, 1).toUpperCase() + value.slice(1);
+
+                _this.ymapsUser.ready(init);
+
+                function init() {
+                    // Поиск координат центра город
+                    ymaps.geocode(value, { results: 1 }).then(function (res) {
+                        // Выбираем первый результат геокодирования.
+                        var firstGeoObject = res.geoObjects.get(0),
+
+                        // Создаем карту с нужным центром.
+                        myMap = new ymaps.Map("map", {
+                            center: firstGeoObject.geometry.getCoordinates(),
+                            zoom: 11
+                        });
+                        console.log(myMap);
+                        myMap.container.fitToViewport();
+                    });
+                }
+
+                var liElem = (0, _jquery2.default)('<li></li>');
+                liElem.text(value);
+                _this.userResult.append(liElem);
+                if (value === '') {
+                    _this.userResult.html('');
+                    // this.modal.openModalFailEmpty();
+                    _this.error.text(_this.errorMesages.emptyValue);
+                } else {
+                    _this.userCities.push(value);
+                    _this.modal.modalResultArrUser = _this.userCities;
+                    _this.headerTitle.text(_this.titleMessages.comp);
+                    _this.formFirstChoice.hide();
+                    _this.checkCity();
+                }
+            });
+
+            this.form.on('submit', function (e) {
+                e.preventDefault();
+                var value = _this.city.val().toLowerCase();
+                _this.currentCityUser.city = value;
+
+                // let checkRepeatWord = false;
+                // for (let i of this.userCities) {
+                //     if ( i === this.currentCityUser.city ) {
+                //         checkRepeatWord = true;
+                //     }
+                // }
+                //
+                // if (checkRepeatWord) {
+                //     this.error.text('Вы повторили слово, придумайте что-нибудь другое');
+                // }
+
+                if (_this.currentCityUser.city.substring(0, 1) === _this.currentCityComp.lastChar) {
+                    var init = function init() {
+                        // Поиск координат центра город
+                        ymaps.geocode(value, { results: 1 }).then(function (res) {
+                            // Выбираем первый результат геокодирования.
+                            var firstGeoObject = res.geoObjects.get(0),
+
+                            // Создаем карту с нужным центром.
+                            myMap = new ymaps.Map("map", {
+                                center: firstGeoObject.geometry.getCoordinates(),
+                                zoom: 11
+                            });
+                            myMap.container.fitToViewport();
+                        });
+                    };
+
+                    _this.userCities.push(value);
+                    value = value.substring(0, 1).toUpperCase() + value.slice(1);
+
+                    _this.ymapsUser.ready(init);
+
+                    var liElem = (0, _jquery2.default)('<li></li>');
+                    liElem.text(value);
+                    _this.userResult.append(liElem);
+                    _this.city.val('');
+                    _this.form.fadeOut();
+                    _this.headerTitle.text(_this.titleMessages.comp);
+                    _this.checkCity();
+                } else {
+                    _this.error.text(_this.errorMesages.lastCharMatch);
+                }
+            });
+        }
+    }, {
+        key: 'loadData',
+        value: function loadData() {
+            var _this2 = this;
+
+            return fetch(this.ajaxHandlerScript, {
+                method: 'get'
+            }).then(function (response) {
+                var contentType = response.headers.get("content-type");
+                if (contentType && contentType.includes("application/json")) {
+                    return response.json();
+                }
+                throw new TypeError("получен не JSON!");
+            }).then(function (data) {
+                for (var key in data) {
+                    if (data.hasOwnProperty(key)) {
+                        _this2.citiesInfo.push(data[key]);
+                    }
+                }
+            });
+        }
+
+        // getCityGeoCode() {
+        //
+        //
+        // }
+
+    }, {
+        key: 'getLastChar',
+        value: function getLastChar(str) {
+            return str.slice(-1);
+        }
+    }, {
+        key: 'randomWord',
+        value: function randomWord(arr) {
+            return arr[Math.floor(Math.random() * arr.length)];
+        }
+
+        // makeFirstCharUpper(str) {
+        //     return str.substring(0, 1).toUpperCase() + str.slice(1);
+        // }
+
+    }, {
+        key: 'checkCity',
+        value: function checkCity() {
+
+            var self = this;
+            var arrTheSameChar = [];
+
+            var getLastCharUser = this.getLastChar(this.currentCityUser.city);
+
+            var _iteratorNormalCompletion = true;
+            var _didIteratorError = false;
+            var _iteratorError = undefined;
+
+            try {
+                for (var _iterator = this.citiesInfo[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+                    var i = _step.value;
+
+                    i = i.toLowerCase();
+                    if (i.substring(0, 1) === getLastCharUser) {
+                        arrTheSameChar.push(i);
+                    }
+                }
+            } catch (err) {
+                _didIteratorError = true;
+                _iteratorError = err;
+            } finally {
+                try {
+                    if (!_iteratorNormalCompletion && _iterator.return) {
+                        _iterator.return();
+                    }
+                } finally {
+                    if (_didIteratorError) {
+                        throw _iteratorError;
+                    }
+                }
+            }
+
+            if (arrTheSameChar.length === 0) {
+                // this.modal.openModalFailCompByWord();
+                this.error.text(this.errorMesages.compDoesntKnowWord);
+                setTimeout(function () {
+                    self.modal.openModal();
+                }, 1500);
+            }
+
+            this.innerText.fadeOut(function () {
+                if (arrTheSameChar.length === 0) {
+                    // self.modal.openModalFailCompByWord();
+                    self.error.text(self.errorMesages.compDoesntKnowWord);
+                    setTimeout(function () {
+                        self.modal.openModal();
+                    }, 1500);
+                } else {
+                    var init = function init() {
+                        // Поиск координат центра города
+                        ymaps.geocode(value, { results: 1 }).then(function (res) {
+                            // Выбираем первый результат геокодирования.
+                            var firstGeoObject = res.geoObjects.get(0),
+
+                            // Создаем карту с нужным центром.
+                            myMap = new ymaps.Map("map", {
+                                center: firstGeoObject.geometry.getCoordinates(),
+                                zoom: 11
+                            });
+                            myMap.container.fitToViewport();
+                        });
+                    };
+
+                    var value = self.randomWord(arrTheSameChar).toLowerCase();
+                    self.compCities.push(value);
+                    self.modal.modalResultArrComp = self.compCities;
+                    value = value.substring(0, 1).toUpperCase() + value.slice(1);
+
+                    self.ymapsComp.ready(init);
+
+                    var _iteratorNormalCompletion2 = true;
+                    var _didIteratorError2 = false;
+                    var _iteratorError2 = undefined;
+
+                    try {
+
+                        for (var _iterator2 = self.compCities[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
+                            var i = _step2.value;
+                            var _iteratorNormalCompletion3 = true;
+                            var _didIteratorError3 = false;
+                            var _iteratorError3 = undefined;
+
+                            try {
+                                for (var _iterator3 = self.userCities[Symbol.iterator](), _step3; !(_iteratorNormalCompletion3 = (_step3 = _iterator3.next()).done); _iteratorNormalCompletion3 = true) {
+                                    var j = _step3.value;
+
+                                    if (value === i || i === j) {
+                                        self.error.text('У компьютера больше не осталось вариантов, он повторяется!');
+                                        setTimeout(function () {
+                                            self.modal.openModal();
+                                        }, 2000);
+                                    }
+                                }
+                            } catch (err) {
+                                _didIteratorError3 = true;
+                                _iteratorError3 = err;
+                            } finally {
+                                try {
+                                    if (!_iteratorNormalCompletion3 && _iterator3.return) {
+                                        _iterator3.return();
+                                    }
+                                } finally {
+                                    if (_didIteratorError3) {
+                                        throw _iteratorError3;
+                                    }
+                                }
+                            }
+                        }
+                    } catch (err) {
+                        _didIteratorError2 = true;
+                        _iteratorError2 = err;
+                    } finally {
+                        try {
+                            if (!_iteratorNormalCompletion2 && _iterator2.return) {
+                                _iterator2.return();
+                            }
+                        } finally {
+                            if (_didIteratorError2) {
+                                throw _iteratorError2;
+                            }
+                        }
+                    }
+
+                    (0, _jquery2.default)(this).text(value).fadeIn();
+                    (0, _jquery2.default)(this).text(value).fadeOut(2000, function () {
+                        self.headerTitle.text(self.titleMessages.user);
+                        self.form.fadeIn();
+                    });
+
+                    self.currentCityComp.lastChar = self.getLastChar(value);
+                    console.log(self.compCities);
+                    var liElem = (0, _jquery2.default)('<li></li>');
+                    liElem.text(value);
+                    self.compResult.append(liElem);
+                }
+            });
+        }
+    }]);
+
+    return Cities;
+}();
+
+exports.default = Cities;
 
 /***/ }),
 /* 83 */
@@ -25707,7 +25657,7 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
     attachTo.clearImmediate = clearImmediate;
 }(typeof self === "undefined" ? typeof global === "undefined" ? this : global : self));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(18), __webpack_require__(43)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(18), __webpack_require__(42)))
 
 /***/ }),
 /* 90 */
@@ -26538,8 +26488,8 @@ exports.ErrorFactory = ErrorFactory;
  * limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-var crypt_1 = __webpack_require__(45);
-var json_1 = __webpack_require__(46);
+var crypt_1 = __webpack_require__(44);
+var json_1 = __webpack_require__(45);
 /**
  * Decodes a Firebase auth. token into constituent parts.
  *
@@ -26673,7 +26623,7 @@ exports.isAdmin = function (token) {
  * limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-var obj_1 = __webpack_require__(47);
+var obj_1 = __webpack_require__(46);
 /**
  * Returns a querystring-formatted string (e.g. &arg=val&arg2=val2) from a params
  * object (e.g. {arg: 'val', arg2: 'val2'})
@@ -27431,7 +27381,7 @@ exports.validateContextObject = validateContextObject;
  * limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-var assert_1 = __webpack_require__(44);
+var assert_1 = __webpack_require__(43);
 // Code originally came from goog.crypt.stringToUtf8ByteArray, but for some reason they
 // automatically replaced '\r\n' with '\n', and they didn't handle surrogate pairs,
 // so it's been modified.
@@ -27872,9 +27822,9 @@ module.exports = __webpack_require__(107);
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var app_1 = __webpack_require__(8);
-var Database_1 = __webpack_require__(48);
+var Database_1 = __webpack_require__(47);
 exports.Database = Database_1.Database;
-var Query_1 = __webpack_require__(52);
+var Query_1 = __webpack_require__(51);
 exports.Query = Query_1.Query;
 var Reference_1 = __webpack_require__(30);
 exports.Reference = Reference_1.Reference;
@@ -27907,7 +27857,7 @@ exports.registerDatabase = registerDatabase;
 registerDatabase(app_1.default);
 var DataSnapshot_1 = __webpack_require__(31);
 exports.DataSnapshot = DataSnapshot_1.DataSnapshot;
-var onDisconnect_1 = __webpack_require__(51);
+var onDisconnect_1 = __webpack_require__(50);
 exports.OnDisconnect = onDisconnect_1.OnDisconnect;
 
 //# sourceMappingURL=index.js.map
@@ -28566,9 +28516,9 @@ var ImmutableTree_1 = __webpack_require__(32);
 var ListenComplete_1 = __webpack_require__(116);
 var Merge_1 = __webpack_require__(117);
 var Operation_1 = __webpack_require__(10);
-var Overwrite_1 = __webpack_require__(62);
+var Overwrite_1 = __webpack_require__(61);
 var Path_1 = __webpack_require__(2);
-var SyncPoint_1 = __webpack_require__(63);
+var SyncPoint_1 = __webpack_require__(62);
 var WriteTree_1 = __webpack_require__(123);
 /**
  * SyncTree is the central class for managing event callback registration, data caching, views
@@ -29397,7 +29347,7 @@ exports.ListenComplete = ListenComplete;
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 var Operation_1 = __webpack_require__(10);
-var Overwrite_1 = __webpack_require__(62);
+var Overwrite_1 = __webpack_require__(61);
 var Path_1 = __webpack_require__(2);
 var util_1 = __webpack_require__(0);
 /**
@@ -29487,7 +29437,7 @@ var IndexedFilter_1 = __webpack_require__(33);
 var ViewProcessor_1 = __webpack_require__(119);
 var ChildrenNode_1 = __webpack_require__(4);
 var CacheNode_1 = __webpack_require__(25);
-var ViewCache_1 = __webpack_require__(64);
+var ViewCache_1 = __webpack_require__(63);
 var EventGenerator_1 = __webpack_require__(122);
 var util_1 = __webpack_require__(0);
 var Operation_1 = __webpack_require__(10);
@@ -31687,7 +31637,7 @@ exports.StatsCollection = StatsCollection;
 Object.defineProperty(exports, "__esModule", { value: true });
 var util_1 = __webpack_require__(0);
 var util_2 = __webpack_require__(1);
-var StatsListener_1 = __webpack_require__(65);
+var StatsListener_1 = __webpack_require__(64);
 // Assuming some apps may have a short amount of time on page, and a bulk of firebase operations probably
 // happen on page load, we try to report our first set of stats pretty quickly, but we wait at least 10
 // seconds to try to ensure the Firebase connection is established / settled.
@@ -31949,7 +31899,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-var EventEmitter_1 = __webpack_require__(67);
+var EventEmitter_1 = __webpack_require__(66);
 var util_1 = __webpack_require__(0);
 /**
  * @extends {EventEmitter}
@@ -32047,7 +31997,7 @@ var __extends = (this && this.__extends) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
 var util_1 = __webpack_require__(0);
-var EventEmitter_1 = __webpack_require__(67);
+var EventEmitter_1 = __webpack_require__(66);
 var util_2 = __webpack_require__(0);
 /**
  * Monitors online state (as reported by window.online/offline events).
@@ -32131,8 +32081,8 @@ exports.OnlineMonitor = OnlineMonitor;
  * limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-var BrowserPollConnection_1 = __webpack_require__(69);
-var WebSocketConnection_1 = __webpack_require__(70);
+var BrowserPollConnection_1 = __webpack_require__(68);
+var WebSocketConnection_1 = __webpack_require__(69);
 var util_1 = __webpack_require__(1);
 /**
  * Currently simplistic, this class manages what transport a Connection should use at various stages of its
@@ -32345,7 +32295,7 @@ var util_2 = __webpack_require__(1);
 var util_3 = __webpack_require__(0);
 var util_4 = __webpack_require__(0);
 var util_5 = __webpack_require__(0);
-var ServerActions_1 = __webpack_require__(71);
+var ServerActions_1 = __webpack_require__(70);
 /**
  * An implementation of ServerActions that communicates with the server via REST requests.
  * This is mostly useful for compatibility with crawlers, where we don't want to spin up a full
@@ -32531,11 +32481,11 @@ var util_1 = __webpack_require__(0);
 var util_2 = __webpack_require__(1);
 var KeyIndex_1 = __webpack_require__(14);
 var PriorityIndex_1 = __webpack_require__(3);
-var ValueIndex_1 = __webpack_require__(54);
-var PathIndex_1 = __webpack_require__(58);
+var ValueIndex_1 = __webpack_require__(53);
+var PathIndex_1 = __webpack_require__(57);
 var IndexedFilter_1 = __webpack_require__(33);
 var LimitedFilter_1 = __webpack_require__(136);
-var RangedFilter_1 = __webpack_require__(72);
+var RangedFilter_1 = __webpack_require__(71);
 var util_3 = __webpack_require__(0);
 /**
  * This class is an immutable-from-the-public-api struct containing a set of query parameters defining a
@@ -32940,7 +32890,7 @@ exports.QueryParams = QueryParams;
  * limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-var RangedFilter_1 = __webpack_require__(72);
+var RangedFilter_1 = __webpack_require__(71);
 var ChildrenNode_1 = __webpack_require__(4);
 var Node_1 = __webpack_require__(5);
 var util_1 = __webpack_require__(0);
@@ -33213,7 +33163,7 @@ var Path_1 = __webpack_require__(2);
 var Tree_1 = __webpack_require__(138);
 var PriorityIndex_1 = __webpack_require__(3);
 var util_2 = __webpack_require__(1);
-var ServerValues_1 = __webpack_require__(59);
+var ServerValues_1 = __webpack_require__(58);
 var validation_1 = __webpack_require__(9);
 var util_3 = __webpack_require__(0);
 var nodeFromJSON_1 = __webpack_require__(15);
@@ -34012,8 +33962,8 @@ exports.Tree = Tree;
  * limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-var WebSocketConnection_1 = __webpack_require__(70);
-var BrowserPollConnection_1 = __webpack_require__(69);
+var WebSocketConnection_1 = __webpack_require__(69);
+var BrowserPollConnection_1 = __webpack_require__(68);
 /**
  * INTERNAL methods for internal-use only (tests, etc.).
  *
@@ -34073,10 +34023,10 @@ exports.interceptServerData = function (ref, callback) {
  * limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-var RepoInfo_1 = __webpack_require__(50);
-var PersistentConnection_1 = __webpack_require__(66);
+var RepoInfo_1 = __webpack_require__(49);
+var PersistentConnection_1 = __webpack_require__(65);
 var RepoManager_1 = __webpack_require__(35);
-var Connection_1 = __webpack_require__(68);
+var Connection_1 = __webpack_require__(67);
 exports.DataConnection = PersistentConnection_1.PersistentConnection;
 /**
  * @param {!string} pathString
@@ -34217,11 +34167,11 @@ registerMessaging(__WEBPACK_IMPORTED_MODULE_2__firebase_app__["firebase"]);
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__controller_interface__ = __webpack_require__(73);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__controller_interface__ = __webpack_require__(72);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__models_errors__ = __webpack_require__(26);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__models_worker_page_message__ = __webpack_require__(76);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__models_worker_page_message__ = __webpack_require__(75);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__models_default_sw__ = __webpack_require__(146);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__models_notification_permission__ = __webpack_require__(75);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__models_notification_permission__ = __webpack_require__(74);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__firebase_util__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__firebase_util___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__firebase_util__);
 /**
@@ -34552,7 +34502,7 @@ var WindowController = /** @class */ (function (_super) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__firebase_util___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__firebase_util__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__errors__ = __webpack_require__(26);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__helpers_array_buffer_to_base64__ = __webpack_require__(145);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__fcm_details__ = __webpack_require__(74);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__fcm_details__ = __webpack_require__(73);
 /**
  * Copyright 2017 Google Inc.
  *
@@ -34990,10 +34940,10 @@ function toBase64(arrayBuffer) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__controller_interface__ = __webpack_require__(73);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__controller_interface__ = __webpack_require__(72);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__models_errors__ = __webpack_require__(26);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__models_worker_page_message__ = __webpack_require__(76);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__models_fcm_details__ = __webpack_require__(74);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__models_worker_page_message__ = __webpack_require__(75);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__models_fcm_details__ = __webpack_require__(73);
 /**
  * Copyright 2017 Google Inc.
  *
@@ -35342,7 +35292,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__src_implementation_string__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__src_implementation_taskenums__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__src_implementation_xhriopool__ = __webpack_require__(150);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__src_reference__ = __webpack_require__(78);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__src_reference__ = __webpack_require__(77);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__src_service__ = __webpack_require__(159);
 /**
  * Copyright 2017 Google Inc.
@@ -35440,7 +35390,7 @@ var XhrIoPool = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__object__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__promise_external__ = __webpack_require__(11);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__type__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__xhrio__ = __webpack_require__(77);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__xhrio__ = __webpack_require__(76);
 /**
  * Copyright 2017 Google Inc.
  *
@@ -35749,7 +35699,7 @@ var RequestInfo = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__implementation_async__ = __webpack_require__(158);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__implementation_error__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__implementation_promise_external__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__implementation_requests__ = __webpack_require__(81);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__implementation_requests__ = __webpack_require__(80);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__implementation_type__ = __webpack_require__(6);
 /**
  * Copyright 2017 Google Inc.
@@ -36463,7 +36413,7 @@ function async(f) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__implementation_location__ = __webpack_require__(28);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__implementation_promise_external__ = __webpack_require__(11);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__implementation_request__ = __webpack_require__(163);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__reference__ = __webpack_require__(78);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__reference__ = __webpack_require__(77);
 /**
  * Copyright 2017 Google Inc.
  *
@@ -36863,7 +36813,7 @@ var RequestMap = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__promise_external__ = __webpack_require__(11);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__type__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__url__ = __webpack_require__(38);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__xhrio__ = __webpack_require__(77);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__xhrio__ = __webpack_require__(76);
 /**
  * Copyright 2017 Google Inc.
  *
