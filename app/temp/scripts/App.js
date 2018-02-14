@@ -24754,7 +24754,7 @@ var Cities = function () {
             emptyValue: 'Значение не может быть пустым',
             lastCharMatch: 'Слово не на последнюю букву компьютера!',
             compDoesntKnowWord: 'Компьютер не может придумать слов на Вашу последнюю букву! Вы победили!',
-            compRepeatWord: 'У компьютера больше не осталось вариантов, он повторяется!'
+            compRepeatWord: 'Или компьютер или Вы повторяетесь - игра закончена'
         };
         this.error = (0, _jquery2.default)('.js-error');
         this.userResult = (0, _jquery2.default)('.js-user-result');

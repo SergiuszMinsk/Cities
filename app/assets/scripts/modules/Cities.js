@@ -36,7 +36,7 @@ export default class Cities {
             emptyValue: 'Значение не может быть пустым',
             lastCharMatch: 'Слово не на последнюю букву компьютера!',
             compDoesntKnowWord: 'Компьютер не может придумать слов на Вашу последнюю букву! Вы победили!',
-            compRepeatWord: 'У компьютера больше не осталось вариантов, он повторяется!'
+            compRepeatWord: 'Или компьютер или Вы повторяетесь - игра закончена'
         }
         this.error = $('.js-error');
         this.userResult = $('.js-user-result');
