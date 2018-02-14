@@ -64,6 +64,11 @@ body {
   margin-left: 30px;
 }
 
+.user-result__list {
+  position: relative;
+  z-index: 1;
+}
+
 .comp-result {
   margin-right: 30px;
   //position: absolute;
