@@ -1,9 +1,13 @@
 .form {
-  position: absolute;
-  margin-top: -5rem;
-  z-index: 10;
+  //position: absolute;
+  //margin-top: -5rem;
 
-  &__city {
+  &-container {
+    z-index: 10;
+    min-height: 40px;
+  }
+
+  &__input {
     width: 200px;
   }
 

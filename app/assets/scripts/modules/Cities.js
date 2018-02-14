@@ -1,6 +1,7 @@
 import $ from 'jquery';
 import * as firebase from 'firebase';
 import Modal from './Modal';
+import {ResultService} from './result-service'
 
 export default class Cities {
 
@@ -24,11 +25,9 @@ export default class Cities {
         this.modal = new Modal();
         this.window = $(window);
         this.ajaxHandlerScript = 'https://test-project-904fc.firebaseio.com/.json';
-        this.userCities = [];
-        this.compCities = [];
         this.citiesInfo = [];
-        this.currentCityUser = {};
-        this.currentCityComp = {};
+        this.currentCityUser = null;
+        this.currentCityComp = null;
         this.titleMessages = {
             comp: 'Ход компьютера',
             user: 'Ваш ход:'
@@ -44,232 +43,138 @@ export default class Cities {
         this.compResult = $('.js-comp-result');
         this.headerTitle = $('.js-header-title');
         this.innerText = $('.js-inner-text');
-        this.formFirstChoice = $('.js-form-firstChoice');
         this.form = $('.js-form');
-        this.city = $('.js-form-city');
-        this.cityFirstChoice = $('.js-form-city-first-choice');
-        this.ymapsUser = $.extend({}, ymaps);
-        this.ymapsComp = $.extend({}, ymaps);
-        this.mapContainer = $('.map-container');
-        this.map = $('#map');
+        this.formInput = $('.js-form-input');
         this.events();
     }
 
     events() {
         this.window.on('load', () => {
-            this.loadData();
-            this.form.hide();
+            this.loadData(); //Загрузка json с городами с сервиса firebase, выбрал этот способ, потому что хотелось как-то сэмулировать запрос к серверу и ранее уже делал такое:)
         });
 
-       this.cityFirstChoice.on('input', () => this.error.text(''));
-       this.city.on('input', () => this.error.text(''));
-
-        this.formFirstChoice.on('submit', (e) => {
-            e.preventDefault();
-            const self = this;
-            let value = this.cityFirstChoice.val().toLowerCase();
-            this.currentCityUser.city = value;
-            value = value.substring(0, 1).toUpperCase() + value.slice(1);
-
-            for (let i of this.compCities) {
-                for (let j of this.userCities) {
-                    if (value === i || i === j) {
-                        this.error.text(this.errorMesages.compRepeatWord);
-                        setTimeout(() => {
-                            this.modal.openModal();
-                        }, 2000)
-                    }
-                }
-            }
-                    initYaMap();
-
-                    function initYaMap() {
-                        self.ymapsUser.ready(init);
-                        function init() {
-                            // Поиск координат центра город
-                            ymaps.geocode(value, {results: 1}).then(function (res) {
-                                // Выбираем первый результат геокодирования.
-                                var firstGeoObject = res.geoObjects.get(0),
-                                    // Создаем карту с нужным центром.
-                                    myMap = new ymaps.Map("map", {
-                                        center: firstGeoObject.geometry.getCoordinates(),
-                                        zoom: 11
-                                    });
-                                myMap.container.fitToViewport();
-                            });
-                        }
-                    }
-
-
-            const liElem = $('<li></li>');
-            liElem.text(value);
-            this.userResult.append(liElem);
-            if (value === '') {
-                this.userResult.html('');
-                this.error.text(this.errorMesages.emptyValue);
-            } else {
-                this.userCities.push(value);
-                this.modal.modalResultArrUser = this.userCities;
-                this.headerTitle.text(this.titleMessages.comp);
-                this.formFirstChoice.hide();
-                this.checkCity();
-            }
-        });
+        this.formInput.on('input', () => this.error.text(''));
+        this.formInput.on('input', () => this.error.text(''));
 
         this.form.on('submit', (e) => {
             e.preventDefault();
-            let value = this.city.val().toLowerCase();
-            this.currentCityUser.city = value;
+            let value = this.formInput.val().toLowerCase();
 
-            // let checkRepeatWord = false;
-            // for (let i of this.userCities) {
-            //     if ( i === this.currentCityUser.city ) {
-            //         checkRepeatWord = true;
-            //     }
-            // }
-            //
-            // if (checkRepeatWord) {
-            //     this.error.text('Вы повторили слово, придумайте что-нибудь другое');
-            // }
+            if (value !== '') {
+                this.checkRepeat(value, () => {
+                    this.currentCityUser = value;
+                    if (this.compareLastChar()) {
+                        const liElem = $('<li>');
+                        ResultService().data.user.push(value);
 
-              if (this.currentCityUser.city.substring(0, 1) === this.currentCityComp.lastChar) {
-                this.userCities.push(value);
-                value = value.substring(0, 1).toUpperCase() + value.slice(1);
-
-                  this.ymapsUser.ready(init);
-
-                  function init() {
-                      // Поиск координат центра город
-                      ymaps.geocode(value, {results: 1}).then(function (res) {
-                          // Выбираем первый результат геокодирования.
-                          var firstGeoObject = res.geoObjects.get(0),
-                              // Создаем карту с нужным центром.
-                              myMap = new ymaps.Map("map", {
-                                  center: firstGeoObject.geometry.getCoordinates(),
-                                  zoom: 11
-                              });
-                          myMap.container.fitToViewport();
-
-                      });
-                  }
-                const liElem = $('<li></li>');
-                liElem.text(value);
-                this.userResult.append(liElem);
-                this.city.val('');
-                this.form.fadeOut();
-                this.headerTitle.text(this.titleMessages.comp);
-                this.checkCity();
+                        liElem.text(this.makeFirstCharUpper(value));
+                        this.userResult.append(liElem);
+                        this.form.val('');
+                        this.headerTitle.text(this.titleMessages.comp);
+                        this.initYmap(value, 'user');
+                        this.stepCityComp();
+                    } else {
+                        this.showError(this.errorMesages.lastCharMatch, false);
+                    }
+                });
             } else {
-                this.error.text(this.errorMesages.lastCharMatch);
+                this.showError(this.errorMesages.emptyValue, false);
             }
         });
+    }
+
+    compareLastChar() {
+        return this.currentCityComp ?
+            this.currentCityUser[0] === this.getLastChar(this.currentCityComp) :
+            true;
+    }
+
+    initYmap(city, type) {
+        // Поиск координат центра город
+        ymaps.geocode(city, {results: 1}).then(function (res) {
+            // Выбираем первый результат геокодирования.
+            var firstGeoObject = res.geoObjects.get(0);
+            // Создаем карту с нужным центром.
+            $('#ymap-' + type).empty();
+            var myMap = new ymaps.Map('ymap-' + type, {
+                center: firstGeoObject.geometry.getCoordinates(),
+                zoom: 11
+            });
+            myMap.container.fitToViewport();
+        });
+    }
+
+    checkRepeat(city, cb) {
+        [...ResultService().data.user, ...ResultService().data.comp].includes(city) ?
+            this.showError(this.errorMesages.compRepeatWord) :
+            cb && cb();
+    }
+
+    showError(text, modal = true) {
+        this.error.text(text);
+
+        if (modal) {
+            setTimeout(() => this.modal.openModal(), 2000);
+        }
     }
 
     loadData() {
         return fetch(this.ajaxHandlerScript, {
             method: 'get'
         })
-            .then(response => {
-                let contentType = response.headers.get("content-type");
-                if (contentType && contentType.includes("application/json")) {
-                    return response.json()
-                }
-                throw new TypeError("получен не JSON!");
-            })
-            .then(data => {
-                for (var key in data) {
-                    if (data.hasOwnProperty(key)) {
-                        this.citiesInfo.push(data[key]);
-                    }
-                }
-            });
+            .then(response => response.json())
+            .then(data => this.citiesInfo = data);
     }
 
 
     getLastChar(str) {
-        return str.slice(-1);
+        return str[str.length - 1];
     }
 
     randomWord(arr) {
         return arr[Math.floor(Math.random() * arr.length)];
     }
 
-    // makeFirstCharUpper(str) {
-    //     return str.substring(0, 1).toUpperCase() + str.slice(1);
-    // }
+    makeFirstCharUpper(str) {
+        return str[0].toUpperCase() + str.slice(1);
+    }
 
-    checkCity() {
-
+    stepCityComp() {
         const self = this;
         const arrTheSameChar = [];
+        const lastCharUser = this.getLastChar(this.currentCityUser);
 
-        let getLastCharUser = this.getLastChar(this.currentCityUser.city);
-
-        for (let i of this.citiesInfo) {
-            i = i.toLowerCase();
-            if (i.substring(0, 1) === getLastCharUser) {
-                arrTheSameChar.push(i);
-             }
+        for (let city of this.citiesInfo) {
+            city = city.toLowerCase();
+            if (city[0] === lastCharUser) {
+                arrTheSameChar.push(city);
             }
-
-      if (arrTheSameChar.length === 0) {
-            this.error.text(this.errorMesages.compDoesntKnowWord);
-          setTimeout(() => {
-              self.modal.openModal();
-          },1500)
         }
 
-        this.innerText.fadeOut(function() {
-            if (arrTheSameChar.length === 0) {
-                self.error.text(self.errorMesages.compDoesntKnowWord);
-                setTimeout(() => {
-                    self.modal.openModal();
-                },1500)
-            } else {
+        if (!arrTheSameChar.length) {
+            this.showError(this.errorMesages.compDoesntKnowWord);
+        }
+
+        this.form.fadeOut();
+        this.innerText.fadeOut(function () {
+            if (arrTheSameChar.length) {
                 let value = self.randomWord(arrTheSameChar).toLowerCase();
-                self.compCities.push(value);
-                self.modal.modalResultArrComp = self.compCities;
-                value = value.substring(0, 1).toUpperCase() + value.slice(1);
+                var $this = $(this);
 
-                self.ymapsComp.ready(init);
-
-                function init() {
-                    // Поиск координат центра города
-                    ymaps.geocode(value, {results: 1}).then(function (res) {
-                        // Выбираем первый результат геокодирования.
-                        var firstGeoObject = res.geoObjects.get(0),
-                            // Создаем карту с нужным центром.
-                            myMap = new ymaps.Map("map", {
-                                center: firstGeoObject.geometry.getCoordinates(),
-                                zoom: 11
-                            });
-                        myMap.container.fitToViewport();
-
+                self.checkRepeat(value, () => {
+                    const liElem = $('<li>');
+                    $this.text(value).fadeIn().fadeOut(2000, () => {
+                        self.headerTitle.text(self.titleMessages.user);
+                        self.formInput.val('');
+                        self.form.fadeIn();
                     });
-                }
 
-                for (let i of self.compCities) {
-                    for (let j of self.userCities) {
-                        if (value === i || i === j) {
-                            self.error.text('У компьютера больше не осталось вариантов, он повторяется!');
-                            setTimeout(() => {
-                                self.modal.openModal();
-                            }, 2000)
-                        }
-                    }
-                }
-
-                $(this).text(value).fadeIn();
-                $(this).text(value).fadeOut(2000, function() {
-                    self.headerTitle.text(self.titleMessages.user);
-                    self.form.fadeIn();
+                    ResultService().data.comp.push(value);
+                    self.currentCityComp = value;
+                    liElem.text(self.makeFirstCharUpper(value));
+                    self.compResult.append(liElem);
+                    self.initYmap(value, 'comp');
                 });
-
-                self.currentCityComp.lastChar = self.getLastChar(value);
-                console.log(self.compCities);
-                const liElem = $('<li></li>');
-                liElem.text(value);
-                self.compResult.append(liElem);
             }
         });
     }

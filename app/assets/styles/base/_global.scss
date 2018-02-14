@@ -14,8 +14,15 @@ body {
 }
 
 .header {
-  margin-top: -15rem;
+  //margin-top: -15rem;
   z-index: 1;
+}
+.result {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 }
 
 .container {
@@ -28,33 +35,40 @@ body {
   height: 100%;
 }
 
-.map-container {
-  width: 550px;
-  height: 400px;
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
+.divider {
+  height: 100%;
+  width: 5px;
+  margin: 0 20px;
 }
 
-.innerText__title {
-  position: absolute;
-  margin-top: 0;
-  left: 50%;
-  transform: translateX(-50%);
+.map-container {
+  display: flex;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.innerText {
+  margin-bottom: 22px;
+  margin-top: -12px;
+  min-height: 30px;
+
+  &__title {
+    margin: 0;
+    text-transform: capitalize;
+  }
 }
 
 .user-result {
-  position: absolute;
-  top: 0;
+  //position: absolute;
+  //top: 0;
   margin-left: 30px;
 }
 
 .comp-result {
   margin-right: 30px;
-  position: absolute;
-  top: 0;
-  right: 0;
+  //position: absolute;
+  //top: 0;
+  //right: 0;
 }
 
 .error {
@@ -63,14 +77,4 @@ body {
   display: block;
   margin-top: 10px;
   color: red;
-}
-
-.ymaps-map:first-child {
-  margin-top: 500px !important;
-  margin-left: -339px !important;
-}
-
-.ymaps-map:last-child {
-  margin-top: -400px !important;
-  margin-left: 350px !important;
 }

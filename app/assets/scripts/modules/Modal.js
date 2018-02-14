@@ -1,18 +1,17 @@
 import $ from 'jquery';
+import {ResultService} from './result-service'
 
 export default class Modal {
     constructor() {
-    this.document = $(document);
-    this.body = document.body;
-    this.container = $('.container');
-    this.resultUser = $('.js-result-user');
-    this.resultComp = $('.js-result-comp');
-    this.overlay = $('.overlay');
-    this.closeBtn = $('.js-close-btn');
-    this.modalContent = $('.js-modal-content');
-    this.modalResultArrUser = [];
-    this.modalResultArrComp = [];
-    this.events();
+        this.document = $(document);
+        this.body = document.body;
+        this.container = $('.container');
+        this.resultUser = $('.js-result-user');
+        this.resultComp = $('.js-result-comp');
+        this.overlay = $('.overlay');
+        this.closeBtn = $('.js-close-btn');
+        this.modalContent = $('.js-modal-content');
+        this.events();
     }
 
     events() {
@@ -34,15 +33,16 @@ export default class Modal {
         this.overlay.css('visibility', 'visible');
         this.closeBtn.css('display', 'block');
         this.container.css('z-index', '0');
-        this.resultUser.text(this.modalResultArrUser.length);
-        this.resultComp.text(this.modalResultArrComp.length);
+        this.resultUser.text(ResultService().data.user.length);
+        this.resultComp.text(ResultService().data.comp.length);
     }
+
     closeModal() {
-            this.modalContent.css('transform', 'translateY(-150%)');
-            this.overlay.css('visibility', 'hidden');
-            this.closeBtn.css('display', 'none');
-            this.container.css('z-index', '10');
-            window.location.reload(true);
+        this.modalContent.css('transform', 'translateY(-150%)');
+        this.overlay.css('visibility', 'hidden');
+        this.closeBtn.css('display', 'none');
+        this.container.css('z-index', '10');
+        window.location.reload(true);
     }
 }
 
