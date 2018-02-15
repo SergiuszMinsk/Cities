@@ -5,13 +5,14 @@ export default class Modal {
     constructor() {
         this.document = $(document);
         this.body = $('body');
+        this.citiesDeclensions = ['город', 'городов', 'города'];
         this.container = $('.container');
         this.resultUser = $('.js-result-user');
         this.resultComp = $('.js-result-comp');
         this.overlay = $('.overlay');
         this.closeBtn = $('.js-close-btn');
         this.modalContent = $('.js-modal-content');
-        this.citiesDeclensions = ['город', 'городов', 'города'];
+
         this.events();
     }
 
@@ -30,8 +31,8 @@ export default class Modal {
     }
 
     getDeclension (number, cases) {
-        var numberString = number.toString();
-        var title = null;
+        const numberString = number.toString();
+        let title = null;
         if ((/1|21|31|41|51$/).test(numberString)) {
             title = cases[0];
         } else if ((/(2|3|4|22|23|24|32|33|34)$/).test(numberString)) {

@@ -7090,13 +7090,14 @@ var Modal = function () {
 
         this.document = (0, _jquery2.default)(document);
         this.body = (0, _jquery2.default)('body');
+        this.citiesDeclensions = ['город', 'городов', 'города'];
         this.container = (0, _jquery2.default)('.container');
         this.resultUser = (0, _jquery2.default)('.js-result-user');
         this.resultComp = (0, _jquery2.default)('.js-result-comp');
         this.overlay = (0, _jquery2.default)('.overlay');
         this.closeBtn = (0, _jquery2.default)('.js-close-btn');
         this.modalContent = (0, _jquery2.default)('.js-modal-content');
-        this.citiesDeclensions = ['город', 'городов', 'города'];
+
         this.events();
     }
 
