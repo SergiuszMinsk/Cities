@@ -7096,6 +7096,7 @@ var Modal = function () {
         this.overlay = (0, _jquery2.default)('.overlay');
         this.closeBtn = (0, _jquery2.default)('.js-close-btn');
         this.modalContent = (0, _jquery2.default)('.js-modal-content');
+        this.citiesDeclensions = ['город', 'городов', 'города'];
         this.events();
     }
 
@@ -7119,23 +7120,18 @@ var Modal = function () {
             // });
         }
     }, {
-        key: 'city',
-        value: function city(length) {
-            switch (length) {
-                case 0:
-                    return 'городов';
-                    break;
-                case 1:
-                    return 'город';
-                    break;
-                case 2:
-                case 3:
-                case 4:
-                    return 'города';
-                    break;
-                default:
-                    return 'городов';
+        key: 'getDeclension',
+        value: function getDeclension(number, cases) {
+            var numberString = number.toString();
+            var title = null;
+            if (/1|21|31|41|51$/.test(numberString)) {
+                title = cases[0];
+            } else if (/(2|3|4|22|23|24|32|33|34)$/.test(numberString)) {
+                title = cases[2];
+            } else {
+                title = cases[1];
             }
+            return title;
         }
     }, {
         key: 'openModal',
@@ -7146,8 +7142,8 @@ var Modal = function () {
             this.overlay.css('visibility', 'visible');
             this.closeBtn.css('display', 'block');
             this.container.css('z-index', '0');
-            this.resultUser.text('' + (this.userResult + ' ' + this.city(this.userResult)));
-            this.resultComp.text('' + (this.compResult + ' ' + this.city(this.compResult)));
+            this.resultUser.text(this.userResult + ' ' + this.getDeclension(this.userResult, this.citiesDeclensions));
+            this.resultComp.text(this.compResult + ' ' + this.getDeclension(this.compResult, this.citiesDeclensions));
         }
     }, {
         key: 'closeModal',
