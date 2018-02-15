@@ -4,7 +4,7 @@ import {ResultService} from './result-service'
 export default class Modal {
     constructor() {
         this.document = $(document);
-        this.body = document.body;
+        this.body = $('body');
         this.container = $('.container');
         this.resultUser = $('.js-result-user');
         this.resultComp = $('.js-result-comp');
@@ -28,13 +28,33 @@ export default class Modal {
         // });
     }
 
+    city(length) {
+        switch (length) {
+            case 0:
+                return 'городов';
+                break;
+            case 1:
+                return 'город';
+                break;
+            case 2:
+            case 3:
+            case 4:
+                return 'города';
+                break;
+            default:
+                return 'городов';
+        }
+    }
+
     openModal() {
+        this.userResult = ResultService().data.user.length;
+        this.compResult = ResultService().data.comp.length;
         this.modalContent.css('transform', 'translateY(0)');
         this.overlay.css('visibility', 'visible');
         this.closeBtn.css('display', 'block');
         this.container.css('z-index', '0');
-        this.resultUser.text(ResultService().data.user.length);
-        this.resultComp.text(ResultService().data.comp.length);
+        this.resultUser.text(`${this.userResult + ' ' + this.city(this.userResult)}`);
+        this.resultComp.text(`${this.compResult + ' ' + this.city(this.compResult)}`);
     }
 
     closeModal() {

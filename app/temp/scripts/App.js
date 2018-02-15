@@ -7089,7 +7089,7 @@ var Modal = function () {
         _classCallCheck(this, Modal);
 
         this.document = (0, _jquery2.default)(document);
-        this.body = document.body;
+        this.body = (0, _jquery2.default)('body');
         this.container = (0, _jquery2.default)('.container');
         this.resultUser = (0, _jquery2.default)('.js-result-user');
         this.resultComp = (0, _jquery2.default)('.js-result-comp');
@@ -7119,14 +7119,35 @@ var Modal = function () {
             // });
         }
     }, {
+        key: 'city',
+        value: function city(length) {
+            switch (length) {
+                case 0:
+                    return 'городов';
+                    break;
+                case 1:
+                    return 'город';
+                    break;
+                case 2:
+                case 3:
+                case 4:
+                    return 'города';
+                    break;
+                default:
+                    return 'городов';
+            }
+        }
+    }, {
         key: 'openModal',
         value: function openModal() {
+            this.userResult = (0, _resultService.ResultService)().data.user.length;
+            this.compResult = (0, _resultService.ResultService)().data.comp.length;
             this.modalContent.css('transform', 'translateY(0)');
             this.overlay.css('visibility', 'visible');
             this.closeBtn.css('display', 'block');
             this.container.css('z-index', '0');
-            this.resultUser.text((0, _resultService.ResultService)().data.user.length);
-            this.resultComp.text((0, _resultService.ResultService)().data.comp.length);
+            this.resultUser.text('' + (this.userResult + ' ' + this.city(this.userResult)));
+            this.resultComp.text('' + (this.compResult + ' ' + this.city(this.compResult)));
         }
     }, {
         key: 'closeModal',
@@ -24778,9 +24799,6 @@ var Cities = function () {
             this.formInput.on('input', function () {
                 return _this.error.text('');
             });
-            this.formInput.on('input', function () {
-                return _this.error.text('');
-            });
 
             this.form.on('submit', function (e) {
                 e.preventDefault();
@@ -24795,7 +24813,7 @@ var Cities = function () {
 
                             liElem.text(_this.makeFirstCharUpper(value));
                             _this.userResult.append(liElem);
-                            _this.form.val('');
+                            _this.formInput.val('');
                             _this.headerTitle.text(_this.titleMessages.comp);
                             _this.initYmap(value, 'user');
                             _this.stepCityComp();

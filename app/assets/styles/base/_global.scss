@@ -67,6 +67,7 @@ body {
 .user-result__list {
   position: relative;
   z-index: 1;
+  background: #fff;
 }
 
 .comp-result {
@@ -81,5 +82,6 @@ body {
   z-index: 1;
   display: block;
   margin-top: 10px;
+  background: #fff;
   color: red;
 }

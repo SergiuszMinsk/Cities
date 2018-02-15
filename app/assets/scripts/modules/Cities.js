@@ -54,7 +54,6 @@ export default class Cities {
         });
 
         this.formInput.on('input', () => this.error.text(''));
-        this.formInput.on('input', () => this.error.text(''));
 
         this.form.on('submit', (e) => {
             e.preventDefault();
@@ -69,7 +68,7 @@ export default class Cities {
 
                         liElem.text(this.makeFirstCharUpper(value));
                         this.userResult.append(liElem);
-                        this.form.val('');
+                        this.formInput.val('');
                         this.headerTitle.text(this.titleMessages.comp);
                         this.initYmap(value, 'user');
                         this.stepCityComp();
