@@ -7127,7 +7127,7 @@ var Modal = function () {
             var title = null;
             if (/1|21|31|41|51$/.test(numberString)) {
                 title = cases[0];
-            } else if (/(2|3|4|22|23|24|32|33|34)$/.test(numberString)) {
+            } else if (/2|3|4|22|23|24|32|33|34$/.test(numberString)) {
                 title = cases[2];
             } else {
                 title = cases[1];
