@@ -37,7 +37,7 @@ export default class Modal {
             title = cases[0];
         } else if ((/2|3|4|22|23|24|32|33|34$/).test(numberString)) {
             title = cases[2];
-        } else if ((/11|12|13|14|15|16|17|18|19|20$/).test(numberString)) {
+        } else if ((/10|11|12|13|14|15|16|17|18|19|20$/).test(numberString)) {
             title = cases[1];
         } else {
             title = cases[1]; 
